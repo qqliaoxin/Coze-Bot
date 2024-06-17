@@ -108,8 +108,9 @@ def chat_bot_page():
     '''页面布局'''    
     with st.sidebar:
         with st.container(border=True):
-            select_model=st.selectbox("选择-Bot",options=["solidity-bot"],index=0)#模型选择
-            model_bot_id=chat_bot_model_config.model_ls[select_model]["bot_id"]#模型名称
+            select_model=st.selectbox("选择-Bot",options=["solidity"],index=0)#模型选择
+            model_bot_id=chat_bot_model_config.model_ls[select_model]["bot_id"]
+            model_description=chat_bot_model_config.model_ls[select_model]["description"]
             st.button(label="清除聊天记录", on_click=lambda: clear(),use_container_width=True) #清除聊天记录按钮
     
     st.title("💬 Coze AI Bot")
@@ -117,7 +118,7 @@ def chat_bot_page():
 
     '''滚动更新聊天记录'''
     with st.chat_message("AI"):
-        st.markdown("您好，我是Coze AI Bot，我会尽力回答您的问题。此外在我的左侧栏中，您可以更换不同的Bot。")
+        st.markdown(model_description)
     for message in st.session_state.chat_message:
         if isinstance(message, AIMessage):
             with st.chat_message("AI"):
