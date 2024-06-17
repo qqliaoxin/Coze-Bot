@@ -15,10 +15,15 @@ An open source Coze AI Bot that integrates conversations. The advantage of the p
     |----------------|-------------------------------------------------|
     | Coze Token KEY   | [Coze网页](https://www.coze.cn/docs/developer_guides/authentication) |
 
-    创建 .env
-    并添加 COZE_TOKEN="Coze Token KEY"
+    
 
-3. 运行
+3. 配置
+    create .env and add COZE_TOKEN="Coze Token KEY"
+    
+    coze list add bot
+    edit: config_setting/chat_bot_model_config.py
+
+4. 运行
     ```bash
     streamlit run web_ui.py
     ```
