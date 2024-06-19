@@ -7,6 +7,8 @@ An open source Coze AI Bot that integrates conversations. The advantage of the p
 1. 下载依赖库
     ```bash
     pip install -r requirements.txt
+
+    playwright install 
     ```
 
 2. 申请API key

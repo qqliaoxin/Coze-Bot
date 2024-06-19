@@ -108,7 +108,7 @@ def chat_bot_page():
     '''页面布局'''    
     with st.sidebar:
         with st.container(border=True):
-            select_model=st.selectbox("选择-Bot",options=["solidity"],index=0)#模型选择
+            select_model=st.selectbox("选择-Bot",options=["solidity","药品医师"],index=0)#模型选择
             model_bot_id=chat_bot_model_config.model_ls[select_model]["bot_id"]
             model_description=chat_bot_model_config.model_ls[select_model]["description"]
             st.button(label="清除聊天记录", on_click=lambda: clear(),use_container_width=True) #清除聊天记录按钮
